@@ -97,7 +97,7 @@ module.exports = function(passport) {
 
                         newUser.local.email    = email;
                         newUser.local.password = newUser.generateHash(password);
-                        newUser.local.role     = 'analyst';
+                        newUser.local.role     = 'general';
 
                         newUser.save(function(err) {
                             if (err)
@@ -124,6 +124,7 @@ module.exports = function(passport) {
                         user.local.email = email;
                         user.local.password = user.generateHash(password);
                         user.local.role = role;
+                        user.local.role     = 'general';
                         user.save(function (err) {
                             if (err)
                                 return done(err);
@@ -166,6 +167,7 @@ module.exports = function(passport) {
                             user.facebook.token = token;
                             user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                             user.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                            user.facebook.role     = 'general';
 
                             user.save(function(err) {
                                 if (err)
@@ -184,6 +186,7 @@ module.exports = function(passport) {
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                         newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                        newUser.facebook.role     = 'general';
 
                         newUser.save(function(err) {
                             if (err)
@@ -202,6 +205,7 @@ module.exports = function(passport) {
                 user.facebook.token = token;
                 user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                 user.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                user.facebook.role     = 'general';
 
                 user.save(function(err) {
                     if (err)
@@ -245,6 +249,7 @@ module.exports = function(passport) {
                             user.google.token = token;
                             user.google.name  = profile.displayName;
                             user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                            user.google.role     = 'general';
 
                             user.save(function(err) {
                                 if (err)
@@ -262,6 +267,7 @@ module.exports = function(passport) {
                         newUser.google.token = token;
                         newUser.google.name  = profile.displayName;
                         newUser.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                        newUser.google.role     = 'general';
 
                         newUser.save(function(err) {
                             if (err)
@@ -280,6 +286,7 @@ module.exports = function(passport) {
                 user.google.token = token;
                 user.google.name  = profile.displayName;
                 user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                user.google.role     = 'general';
 
                 user.save(function(err) {
                     if (err)
