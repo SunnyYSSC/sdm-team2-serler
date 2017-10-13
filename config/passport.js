@@ -97,7 +97,7 @@ module.exports = function(passport) {
 
                         newUser.local.email    = email;
                         newUser.local.password = newUser.generateHash(password);
-                        newUser.local.role     = 'general';
+                        newUser.local.role     = 'analyst';
 
                         newUser.save(function(err) {
                             if (err)

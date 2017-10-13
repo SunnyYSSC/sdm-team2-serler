@@ -213,7 +213,7 @@ function isLoggedIn(req, res, next) {
 
 function isAnalyst(req, res, next){
     var role = req.user.local.role;
-    if(role === "general"){
+    if(role === "analyst"){
         return next();
     }
     else{
